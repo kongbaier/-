@@ -1,0 +1,103 @@
+.shear-plate {
+  display: flex;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  gap: 1em;
+  padding: 0;
+  box-sizing: border-box;
+}
+.shear-plate-header {
+  flex: 1;
+  border: 1px solid var(--border-color);
+  border-radius: 10px 10px 0 0;
+}
+.fixed-moving-bar {
+  position: fixed;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 5px;
+  background: var(--primary-gradient);
+  border-radius: 2px;
+  opacity: 0.8;
+  transition: all 0.3s;
+}
+.fixed-moving-bar:hover {
+  opacity: 0.3;
+}
+.shear-plate-content {
+  flex: 9;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1em;
+  overflow-y: auto;
+}
+.card-grid {
+  border: 1px solid var(--border-color);
+  width: 300px;
+  margin: 0 auto;
+  aspect-ratio: 3/2;
+}
+.sidebar-trigger {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 60px;
+  border-radius: 4px 0 0 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  background-color: var(--trigger-bg);
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  user-select: none;
+}
+.sidebar-trigger:hover {
+  background: var(--trigger-hover);
+}
+.sidebar-trigger.open .arrow-icon {
+  transform: rotate(0deg);
+}
+.arrow-icon {
+  color: var(--text-color);
+  font-size: 20px;
+  transform: rotate(180deg);
+  transition: 0.3s;
+}
+/* Home.css 添加蒙版样式 */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998; /* 确保在内容之上，侧边栏之下 */
+  transition: background-color 0.5s ease;
+}
+.sidebar-container {
+  position: fixed;
+  right: -320px;
+  top: 0;
+  width: 320px;
+  height: 100vh;
+  transition: right 0.5s ease;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-color);
+  box-shadow: var(--shadow);
+  color: var(--text-color);
+}
+
+.sidebar-container.open {
+  right: 0;
+}

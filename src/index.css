@@ -1,0 +1,27 @@
+:root {
+  /* 亮色主题 */
+  --primary-gradient: linear-gradient(135deg, #e57373, #ef9a9a);
+  --primary-gradient-hover: linear-gradient(135deg, #ef5350, #e57373);
+  --bg-color: rgba(255, 255, 255, 0.98);
+  --trigger-bg: rgba(229, 115, 115, 0.08);
+  --trigger-hover: rgba(229, 115, 115, 0.15);
+  --border-color: #ffebee;
+  --item-bg: #ffffff;
+  --text-color: #424242;
+  --shadow: 0 2px 12px rgba(229, 115, 115, 0.08);
+}
+
+/* 暗色主题 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-gradient: linear-gradient(135deg, #d32f2f, #e57373);
+    --primary-gradient-hover: linear-gradient(135deg, #ef5350, #e57373);
+    --bg-color: rgba(33, 33, 33, 0.98);
+    --trigger-bg: rgba(229, 115, 115, 0.06);
+    --trigger-hover: rgba(229, 115, 115, 0.12);
+    --border-color: #311b1b;
+    --item-bg: #262626;
+    --text-color: #fafafa;
+    --shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  }
+}
